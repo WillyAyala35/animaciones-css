@@ -173,6 +173,7 @@ footer .enlaces {
     grid-template-rows: calc(100vh - 100px) 100px;
   }
 
+  /* Navegador */
   nav {
     display: flex;
     flex-direction: column;
@@ -187,6 +188,7 @@ footer .enlaces {
     display: block;
   }
 
+  /* Contenido */
   main {
     padding: 50px 0;
     background: #f7e7e7;
@@ -197,6 +199,7 @@ footer .enlaces {
     border: 2px solid red;
   }
 
+  /* Fin */
   footer {
     box-sizing: border-box;
     display: inline-block;
@@ -224,63 +227,10 @@ footer .enlaces {
     grid-template-columns: 100vw;
     grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
   }
-
-  .nav-link {
-    background: rgb(201, 244, 92);
-    color: red;
-    border: 1px solid red;
-    margin-right: 50px;
-    padding: 5px 20px;
-    transition: all 4s ease-out;
-  }
-
-  .nav-link:hover {
-    background: red;
-    color: rgb(201, 244, 92);
-    font-weight: bold;
-  }
-
-  #logo {
-    animation: rotar 5s infinite;
-  }
-
-  @keyframes rotar {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  #nombre {
-    animation: colorear 5s infinite;
-  }
-
-  @keyframes colorear {
-    from {
-      color: white;
-      text-transform: none;
-      font-weight: none;
-    }
-
-    to {
-      color: yellow;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-  }
-
-  main {
-    padding: 25px 10px;
-    background: whitesmoke;
-  }
-
-  .foto-container {
+   
+  /* Navegador */
+  nav {
     box-sizing: border-box;
-    margin: 20px 200px;
-    border: 2px solid red;
   }
 
   nav .navbar-brand p {
@@ -323,6 +273,35 @@ footer .enlaces {
     }
   }
 
+  .nav-link {
+    background: rgb(201, 244, 92);
+    color: red;
+    border: 1px solid red;
+    margin-right: 50px;
+    padding: 5px 20px;
+    transition: all 4s ease-out;
+  }
+
+  .nav-link:hover {
+    background: red;
+    color: rgb(201, 244, 92);
+    font-weight: bold;
+  }
+
+  /* Contenido */
+  main {
+    padding: 25px 10px;
+    background: whitesmoke;
+    box-sizing: border-box;
+  }
+
+  .foto-container {
+    box-sizing: border-box;
+    margin: 20px 200px;
+    border: 2px solid red;
+  }
+
+  /* Fin */
   footer {
     padding: 25px 0;
   }
