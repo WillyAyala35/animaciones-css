@@ -1,52 +1,231 @@
+/* Reiniciando estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body */
 body {
-    display: grid;
-    grid-template-areas:
+  display: grid;
+  grid-template-areas:
     "navegador"
     "contenido"
     "fin";
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
 }
 
+/* Navegador */
 nav {
-    grid-area: navegador;
-    background: red;
+  grid-area: navegador;
+  background: rgb(201, 244, 92);
 }
 
-section {
-    grid-area: contenido;
-    background: blue;
+nav .navbar-brand {
+  display: flex;
+  align-content: center;
+  color: red;
 }
 
+#logo {
+  width: 50px;
+  margin-right: px;
+  animation: rotar 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#nombre {
+  color: white;
+  animation: colorear 5s infinite;
+}
+
+@keyframes colorear {
+  from {
+    color: white;
+    text-transform: none;
+    font-weight: none;
+  }
+
+  to {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.bi {
+  font-size: 30px;
+  color: blue;
+  animation: color 5s infinite;
+}
+
+@keyframes color {
+  from {
+    color: white;
+  }
+
+  to {
+    color: red;
+  }
+}
+
+/* Contenido */
+main {
+  grid-area: contenido;
+  padding: 25px 0;
+}
+
+.foto-container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  margin: 20px 20px;
+  background: rgb(240, 216, 200);
+  box-sizing: border-box;
+}
+
+#foto {
+  width: 120px;
+  transition: 5s ease-out;
+  animation: girar 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes girar {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+
+.párrafo {
+  text-align: justify;
+  justify-content: right;
+  font-size: 12px;
+  color: black;
+  margin-left: 15px;
+}
+
+/* Fin */
 footer {
-    grid-area: fin;
-    background: green;
-    min-width: ;
+  grid-area: fin;
+  background: rgb(201, 244, 92);
+  padding: 20px 2px;
 }
+
+footer p {
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: small;
+  line-height: 0;
+  animation: move 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+footer .enlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+}
+
+/* Media Queries */
+
+/* Tablets */
 
 @media (min-width: 768px) {
-    body {
-        grid-template-areas:
-        "navegador contenido"
-        "fin contenido";
-        grid-template-columns: 150px calc(100vw - 150px);
-        grid-template-rows: calc(100vh - 100px) 100px;
-    }
+  body {
+    grid-template-areas:
+      "navegador contenido"
+      "fin contenido";
+    grid-template-columns: 150px calc(100vw - 150px);
+    grid-template-rows: calc(100vh - 100px) 100px;
+  }
 }
 
+/* Desktops */
+
 @media (min-width: 992px) {
-    body {
-        grid-template-areas:
-        "navegador"
-        "contenido"
-        "fin";
-        grid-template-columns: 100vw;
-        grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
+  body {
+    grid-template-areas:
+      "navegador"
+      "contenido"
+      "fin";
+    grid-template-columns: 100vw;
+    grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
+  }
+
+  .nav-link {
+    background: white;
+    color: black;
+    margin-right: 50px;
+    padding: 5px 20px;
+    transition: all 4s ease-out;
+  }
+
+  .nav-link:hover {
+    background: black;
+    color: white;
+    border: solid white;
+  }
+
+  #logo {
+    animation: rotar 5s infinite;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0);
     }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #nombre {
+    animation: colorear 5s infinite;
+  }
+
+  @keyframes colorear {
+    from {
+      color: white;
+      text-transform: none;
+      font-weight: none;
+    }
+
+    to {
+      color: yellow;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
 }
