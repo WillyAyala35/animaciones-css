@@ -7,6 +7,7 @@
 
 /* Body */
 body {
+  box-sizing: border-box;
   display: grid;
   grid-template-areas:
     "navegador"
@@ -25,12 +26,10 @@ nav {
 nav .navbar-brand {
   display: flex;
   align-content: center;
-  color: red;
 }
 
 #logo {
   width: 50px;
-  margin-right: px;
   animation: rotar 5s infinite;
   animation-direction: alternate;
 }
@@ -64,26 +63,15 @@ nav .navbar-brand {
   }
 }
 
-.bi {
-  font-size: 30px;
-  color: blue;
-  animation: color 5s infinite;
-}
-
-@keyframes color {
-  from {
-    color: white;
-  }
-
-  to {
-    color: red;
-  }
+#navbarSupportedContent {
+  display: none;
 }
 
 /* Contenido */
 main {
   grid-area: contenido;
-  padding: 25px 0;
+  padding: 20px 5px;
+  background: whitesmoke;
 }
 
 .foto-container {
@@ -113,7 +101,6 @@ main {
     transform: rotateY(360deg);
   }
 }
-
 
 .párrafo {
   text-align: justify;
@@ -149,6 +136,23 @@ footer p {
   }
 }
 
+footer .bi {
+  font-size: 30px;
+  color: blue;
+  animation: color 3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes color {
+  from {
+    color: white;
+  }
+
+  to {
+    color: red;
+  }
+}
+
 footer .enlaces {
   display: flex;
   justify-content: center;
@@ -160,7 +164,6 @@ footer .enlaces {
 /* Media Queries */
 
 /* Tablets */
-
 @media (min-width: 768px) {
   body {
     grid-template-areas:
@@ -168,6 +171,45 @@ footer .enlaces {
       "fin contenido";
     grid-template-columns: 150px calc(100vw - 150px);
     grid-template-rows: calc(100vh - 100px) 100px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  nav p {
+    display: none;
+  }
+
+  #navbarSupportedContent {
+    display: block;
+  }
+
+  main {
+    padding: 50px 0;
+    background: #f7e7e7;
+  }
+
+  .foto-container {
+    margin: 50px 50px;
+    border: 2px solid red;
+  }
+
+  footer {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 5px;
+  }
+
+  footer p {
+    animation: none;
+    display: inline;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 }
 
@@ -184,17 +226,18 @@ footer .enlaces {
   }
 
   .nav-link {
-    background: white;
-    color: black;
+    background: rgb(201, 244, 92);
+    color: red;
+    border: 1px solid red;
     margin-right: 50px;
     padding: 5px 20px;
     transition: all 4s ease-out;
   }
 
   .nav-link:hover {
-    background: black;
-    color: white;
-    border: solid white;
+    background: red;
+    color: rgb(201, 244, 92);
+    font-weight: bold;
   }
 
   #logo {
@@ -226,6 +269,80 @@ footer .enlaces {
       color: yellow;
       text-transform: uppercase;
       font-weight: bold;
+    }
+  }
+
+  main {
+    padding: 25px 10px;
+    background: whitesmoke;
+  }
+
+  .foto-container {
+    box-sizing: border-box;
+    margin: 20px 200px;
+    border: 2px solid red;
+  }
+
+  nav .navbar-brand p {
+    display: flex;
+    align-content: center;
+  }
+
+  #logo {
+    width: 50px;
+    animation: rotar 5s infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #nombre {
+    animation: colorear 5s infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes colorear {
+    from {
+      color: black;
+      text-transform: none;
+      font-weight: none;
+    }
+
+    to {
+      color: red;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  footer {
+    padding: 25px 0;
+  }
+
+  footer p {
+    display: flex;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: small;
+    line-height: 0;
+    animation: move 5s infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes move {
+    from {
+      transform: translateX(-100px);
+    }
+    to {
+      transform: translateX(100px);
     }
   }
 }
