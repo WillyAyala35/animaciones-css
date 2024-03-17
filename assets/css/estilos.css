@@ -220,6 +220,7 @@ footer .enlaces {
 
 @media (min-width: 992px) {
   body {
+    box-sizing: border-box;
     grid-template-areas:
       "navegador"
       "contenido"
